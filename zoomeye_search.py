@@ -73,10 +73,7 @@ class ZoomEye:
         if total == 0:
             print "No result, exit.."
             sys.exit()
-        page = total/10
-        if total%10 == 0:
-            return page
-        return page + 1
+        page = int((total+9)/10)
 
     def getToken(self):
         token = req.post('https://api.zoomeye.org/user/login',json.dumps(self.account)).content
